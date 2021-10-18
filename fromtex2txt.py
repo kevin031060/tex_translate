@@ -14,7 +14,7 @@ import pickle
 
 if __name__ == '__main__':
     # print(translate())
-    filename = "file/main.tex"
+    filename = "file/SupplementalFile.tex"
     todocx = False
 
     if(re.search('.tex$',filename)==None):
