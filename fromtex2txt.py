@@ -8,13 +8,27 @@ import sys
 import docx
 from docx.shared import RGBColor
 import pickle
+from docx import Document
+import glob
+import os
 
+def txt2doc(file_name):
+    doc = Document()
+
+    file = "file/" + file_name + ".txt"
+
+    with open(file, 'r', encoding='utf-8') as openfile:
+        line = openfile.read()
+        doc.add_paragraph(line)
+        doc.save(file + ".docx")
+
+    os.system(file + ".docx")
 
 
 
 if __name__ == '__main__':
     # print(translate())
-    filename = "file/SupplementalFile.tex"
+    filename = "file/SupplementalFile02.tex"
     todocx = False
 
     if(re.search('.tex$',filename)==None):
@@ -107,7 +121,7 @@ if __name__ == '__main__':
     #%%
     if not todocx:
         ### Save the processed output to .txt file
-        limit=30000 # Estimated Google Translate character limit
+        limit=3000000 # Estimated Google Translate character limit
         filebase = re.sub('.tex$','',filename)
         start=0
         npart=0

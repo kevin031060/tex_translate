@@ -17,5 +17,5 @@ def convert_back(filename):
         txt_file.write(source)
 
 if __name__ == '__main__':
-    filename = "file/SupplementalFile.txt"
+    filename = "file/SupplementalFile02.txt"
     convert_back(filename)
